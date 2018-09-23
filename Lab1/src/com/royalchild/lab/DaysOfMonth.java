@@ -19,8 +19,9 @@ public class DaysOfMonth {
     public static void main(String[] args) {
         // Print out how many days in a month with the given input
         Month inputMonth = Month.Jan;
-
         // Complete the program
+
+
     }
 
 }
