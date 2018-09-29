@@ -1,4 +1,4 @@
-package com.royalchild.assignment.answers;
+package com.royalchild.assignment.answer.assignment.answers;
 
 public class IsPrimeNumber {
 
