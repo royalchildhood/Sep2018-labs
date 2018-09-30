@@ -9,7 +9,7 @@ public class GetDaysInMonth {
 	 * Now that we know the way to print out the Days in a week
 	 * Let do days in a Month now.
 	 *
-	 * Given a input value 1 between 1 to 12 and given a input year
+	 * Given a input value between 1 to 12 and given a input year
 	 * print out how many days exist in that given month
 	 *
 	 * hint: Feb in leap year has 29 days
