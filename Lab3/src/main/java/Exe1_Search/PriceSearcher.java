@@ -16,7 +16,10 @@ public class PriceSearcher {
          */
         int numOfLines = 100000;
         int numOfPricePerLine = 1000;
-        //PriceUtil.generatePriceList(numOfLines, numOfPricePerLine, 10000, 999900, "resource/pricelist.txt");
+
+        // generate price
+        PriceUtil.generatePriceList(numOfLines, numOfPricePerLine, 10000, 999900, "resource/pricelist.txt");
+        // load price in to array
         double[] toSearch = PriceUtil.loadPriceList("resource/pricelist.txt", numOfLines*numOfPricePerLine);
 
         /**=======================================================================
