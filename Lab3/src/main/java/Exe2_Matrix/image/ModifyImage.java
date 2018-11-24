@@ -1,11 +1,11 @@
-package Exe2_Matrix;
+package Exe2_Matrix.image;
+
+import Exe2_Matrix.image.ImageRGB;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class ModifyImage {
 

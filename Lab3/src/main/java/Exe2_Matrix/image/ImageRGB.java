@@ -1,4 +1,4 @@
-package Exe2_Matrix;
+package Exe2_Matrix.image;
 
 public class ImageRGB {
     public int red;
