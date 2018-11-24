@@ -2,11 +2,12 @@ package Exe2_Matrix;
 
 public class PracticeMatrix {
 
-    public static void printMatix() {
+
+    public static int[][] createMatix() {
         // TODO
     }
 
-    public static void setMatix() {
+    public static void printMatix(int[][] martix) {
         // TODO
     }
 
@@ -20,5 +21,9 @@ public class PracticeMatrix {
 
     public static void flipMartixSysmertic() {
         // TODO
+    }
+
+    public static void main(String[] args) {
+        
     }
 }
