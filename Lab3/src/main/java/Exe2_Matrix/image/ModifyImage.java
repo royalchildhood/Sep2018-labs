@@ -1,7 +1,5 @@
 package Exe2_Matrix.image;
 
-import Exe2_Matrix.image.ImageRGB;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -29,7 +27,15 @@ public class ModifyImage {
      * Exercises
      */
     public static void modifyImagePractice(BufferedImage targetImage, ImageRGB[] rgbValues) {
-        // TODO
+        int index = 0;
+        for (int i = 0; i < targetImage.getWidth(); i++) {
+            for (int j = 0; j < targetImage.getHeight(); j++) {
+                ImageRGB rgb = rgbValues[index];
+                Color color = new Color(rgb.red, rgb.green, rgb.blue);
+                targetImage.setRGB(targetImage.getWidth() - i - 1 , targetImage.getHeight() - j - 1, color.getRGB());
+                index++;
+            }
+        }
     }
 
     /**
