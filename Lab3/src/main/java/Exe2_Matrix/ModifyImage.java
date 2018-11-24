@@ -28,16 +28,8 @@ public class ModifyImage {
     /**
      * Exercises
      */
-    public static void modifyImagePractice(BufferedImage copy, ArrayList<ImageRGB> rgbValues) {
-        int k = -1;
-        for (int i = 0; i < copy.getWidth(); i++) {
-            for (int j = 0; j < copy.getHeight(); j++) {
-                k++;
-                ImageRGB rgb = rgbValues.get(k);
-                Color color = new Color(rgb.red, rgb.green, rgb.blue);
-                copy.setRGB(copy.getWidth() - i - 1 , copy.getHeight() - j - 1, color.getRGB());
-            }
-        }
+    public static void modifyImagePractice(BufferedImage copy, ImageRGB[] rgbValues) {
+
     }
 
     /**
@@ -45,14 +37,16 @@ public class ModifyImage {
      */
     private static void writeImage(BufferedImage target, String outputPath) {
         BufferedImage copy = copyImage(target);
-        ArrayList<ImageRGB> rgbValues = new ArrayList<ImageRGB>();
+        ImageRGB[] rgbValues = new ImageRGB[copy.getWidth() * copy.getHeight()];
+        int index = 0;
         for (int i = 0; i < copy.getWidth(); i++) {
             for (int j = 0; j < copy.getHeight(); j++) {
                 Color color = new Color(copy.getRGB(i, j));
                 int red = color.getRed();
                 int green = color.getGreen();
                 int blue = color.getBlue();
-                rgbValues.add(new ImageRGB(red, blue, green));
+                rgbValues[index] = new ImageRGB(red, blue, green);
+                index++;
             }
         }
 
