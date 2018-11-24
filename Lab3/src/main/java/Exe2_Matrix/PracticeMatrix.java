@@ -5,6 +5,8 @@ public class PracticeMatrix {
 
     public static int[][] createMatix() {
         // TODO
+
+        return null;
     }
 
     public static void printMatix(int[][] martix) {
@@ -24,6 +26,6 @@ public class PracticeMatrix {
     }
 
     public static void main(String[] args) {
-        
+
     }
 }
