@@ -28,7 +28,7 @@ public class ModifyImage {
     /**
      * Exercises
      */
-    public static void modifyImagePractice(BufferedImage copy, ImageRGB[] rgbValues) {
+    public static void modifyImagePractice(BufferedImage targetImage, ImageRGB[] rgbValues) {
 
     }
 
