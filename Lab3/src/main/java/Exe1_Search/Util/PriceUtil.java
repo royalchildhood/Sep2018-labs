@@ -1,4 +1,4 @@
-package Lab1_search;
+package Exe1_Search.Util;
 
 import java.io.*;
 
@@ -9,7 +9,7 @@ public class PriceUtil {
         String fileName = filePath;
         // This will reference one line at a time
         String line = null;
-        double[] result = new double[arraySize+1];
+        double[] result = new double[arraySize];
 
         BufferedReader bufferedReader = null;
         try {
@@ -23,10 +23,8 @@ public class PriceUtil {
             while((line = bufferedReader.readLine()) != null) {
                 String[] pricelist = line.split(" ");
                 for (int i = 0; i < pricelist.length; i++) {
-                    if (index < arraySize) {
-                        result[index] = Double.valueOf(pricelist[i]);
-                        index++;
-                    }
+                    result[index] = Double.valueOf(pricelist[i]);
+                    index++;
                 }
             }
 
@@ -51,8 +49,8 @@ public class PriceUtil {
                 int price = min + (int)(Math.random()*(max - min) + 1);
                 double pricedigit = ((double)price) / 100;
                 sb.append(pricedigit).append(" ");
-                writer.write(sb.toString());
             }
+            writer.write(sb.toString());
             writer.write("\n");
         }
         writer.close();
