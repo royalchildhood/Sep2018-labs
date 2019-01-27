@@ -14,11 +14,11 @@ public class PriceSearcher {
          * Initial
          * =======================================================================
          */
-        int numOfLines = 100000;
+        int numOfLines = 50000;
         int numOfPricePerLine = 1000;
 
         // generate price
-        PriceUtil.generatePriceList(numOfLines, numOfPricePerLine, 10000, 999900, "resource/pricelist.txt");
+        // PriceUtil.generatePriceList(numOfLines, numOfPricePerLine, 10000, 999900, "resource/pricelist.txt");
         // load price in to array
         double[] toSearch = PriceUtil.loadPriceList("resource/pricelist.txt", numOfLines*numOfPricePerLine);
 
@@ -27,8 +27,8 @@ public class PriceSearcher {
          * =======================================================================
          */
         double searchTarget = 1234.01;
-        double lowerRange = 1111;
-        double upperRange = 9999;
+        double lowerRange = 5555;
+        double upperRange = 6000;
 
         /**=======================================================================
          * Performance
@@ -51,17 +51,51 @@ public class PriceSearcher {
         endTime = System.currentTimeMillis();
         second = endTime - startTime;
         System.out.println("Range Search took: " + second + " milliseconds  to finish"+ "\n");
+
+        startTime = System.currentTimeMillis();
+        SortUtil.sort(toSearch, 0, toSearch.length - 1);
+        endTime = System.currentTimeMillis();
+        second = endTime - startTime;
+        System.out.println("Sorting took: " + second + " milliseconds  to finish"+ "\n");
+
+
+        startTime = System.currentTimeMillis();
+        BinarySearchUtil.findNumber(toSearch, searchTarget);
+        endTime = System.currentTimeMillis();
+        second = endTime - startTime;
+        System.out.println("binary search took: " + second + " milliseconds  to finish"+ "\n");
     }
 
     public static void normalSearch(double target, double[] list) {
-        // TODO
+        for (int i = 0; i < list.length; i++) {
+            if (target == list[i]) {
+                System.out.println(target);
+                return;
+            }
+        }
+
+        System.out.println("not find");
     }
 
     public static void findMax(double[] list) {
-        // TODO
+        double max = list[0];
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] > max) {
+                max = list[i];
+            }
+        }
+
+        System.out.println(max);
     }
 
     public static void findRange(double min, double max, double[] list) {
-        // TODO
+        int counter = 0;
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] >= min && list[i] <= max ) {
+                counter++;
+            }
+        }
+
+        System.out.println(counter);
     }
 }
