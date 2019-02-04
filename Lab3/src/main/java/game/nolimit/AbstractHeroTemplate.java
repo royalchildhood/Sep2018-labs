@@ -3,18 +3,20 @@ package game.nolimit;
 abstract public class AbstractHeroTemplate {
 	public final String heroName;
 	private int health;
+	private int attack;
 
-	public AbstractHeroTemplate(String name, int health) {
+	public AbstractHeroTemplate(String name, int health, int attack) {
 		this.heroName = name;
 		this.health = health;
+		this.attack = attack;
 	}
 
 	public void move() {
 		System.out.print("Move up down right left");
 	}
 
-	public void normalAttack() {
-		System.out.print("hero attack");
+	public int normalAttack() {
+		return attack * getCriticalHitRatio();
 	}
 
 	public void beingAttack(int hpCut) {
